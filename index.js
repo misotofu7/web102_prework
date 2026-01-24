@@ -155,11 +155,15 @@ const unfundedGames = GAMES_JSON.filter( (game) => {
 });
 
 // create a string that explains the number of unfunded games using the ternary operator
-displayUnfundedGames = `A total of $${totalRaised.toLocaleString('en-US')}
-    has been raised for ${GAMES_JSON.length} games.`;
+const displayStr = `A total of $${totalRaised.toLocaleString('en-US')}
+    has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGames.length}
+    ${unfundedGames.length === 1 ? "game remains" : "games remain"} unfunded.
+    We need your help to fund these amazing games!`;
 
 // create a new DOM element containing the template string and append it to the description container
-
+const description = document.createElement("p");
+description.textContent = displayStr;
+descriptionContainer.appendChild(description);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -174,7 +178,9 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+
 
 // do the same for the runner up item
