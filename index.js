@@ -50,6 +50,19 @@ function addGamesToPage(games) {
             <p>Backers: ${games[i].backers}</p>
         `;
 
+        // bonus feature: adding ranking position on hover over game card
+        const originalHTML = gameCard.innerHTML;
+        
+        gameCard.addEventListener("mouseover", () => {
+            const rank = rankedGames.get(games[i].name);
+            gameCard.innerHTML = `<h2>Rank: #${rank}</h2>`;
+        });
+
+        gameCard.addEventListener("mouseout", () => {
+            gameCard.innerHTML = originalHTML;
+        });
+        // end of bonus feature code
+
         // append the game to the games-container
         gamesContainer.append(gameCard);
     }
@@ -190,7 +203,7 @@ const secondFundedGame = document.createElement("read-minds");
 secondGameContainer.appendChild(secondFundedGame);
 
 /************************************************************************************
- * Bonus Features I Added:
+ * Bonus Feature #1:
  * Hovering over Top Funded Game and Runner Up text will reveal the names
  */
 
@@ -215,3 +228,15 @@ runnerUpBtn.addEventListener("mouseover", () => {
 runnerUpBtn.addEventListener("mouseout", () => {
     runnerUpBtn.innerHTML = runnerUpOriginalText;
 });
+
+/*****************************************************************************
+ * Bonus Feature #2:
+ * Hovering over game cards will reveal ranking position
+ */
+
+// rank all the games based on amount pledged (1 = highest rank)
+const rankedGames = new Map(
+    sortedGames.map((game, index) => [game.name, index + 1])
+);
+
+// modified the function addGamesToPage to include ranking on hover!
