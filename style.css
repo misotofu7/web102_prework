@@ -79,3 +79,11 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+/* Bonus Styling I added for h2 (better readability) */
+h2 {
+    display: inline-block;
+    background-color: rgb(233, 233, 233);
+    border-radius: 7px;
+    padding: 10px 20px 10px;
+}

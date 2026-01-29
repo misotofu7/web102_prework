@@ -188,3 +188,30 @@ firstGameContainer.appendChild(topFundedGame);
 // do the same for the runner up item
 const secondFundedGame = document.createElement("read-minds");
 secondGameContainer.appendChild(secondFundedGame);
+
+/************************************************************************************
+ * Bonus Features I Added:
+ * Hovering over Top Funded Game and Runner Up text will reveal the names
+ */
+
+const topFundedGameBtn = document.getElementById("top-funded-game");
+const runnerUpBtn = document.getElementById("runner-up");
+
+const topFundedOriginalText = topFundedGameBtn.innerHTML;
+const runnerUpOriginalText = runnerUpBtn.innerHTML;
+
+topFundedGameBtn.addEventListener("mouseover", () => {
+    topFundedGameBtn.innerHTML = `🥇 ${firstGame.name}`;
+});
+
+topFundedGameBtn.addEventListener("mouseout", () => {
+    topFundedGameBtn.innerHTML = topFundedOriginalText;
+});
+
+runnerUpBtn.addEventListener("mouseover", () => {
+    runnerUpBtn.innerHTML = `🥈 ${secondGame.name}`;
+});
+
+runnerUpBtn.addEventListener("mouseout", () => {
+    runnerUpBtn.innerHTML = runnerUpOriginalText;
+});
