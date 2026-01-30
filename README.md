@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://www.youtube.com/watch?v=yL3ot2U6lGM' title='CodePath Pre-work Walkthrough - WEB102 (Sea Monster Crowdfunding)' width='' alt='Video Walkthrough of Sea Monster Crowdfunding' />
+<<iframe width="100%" height="360" src='https://www.youtube.com/watch?v=BXptQj5MNYU' title='CodePath Pre-work Walkthrough - WEB102 (Sea Monster Crowdfunding)'></iframe>
 
 <!-- Replace this with whatever GIF tool you used! -->
 Video created with QuickTime Player (and iMovie for editing)
